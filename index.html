@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<title>Tick Tac Toe</title>
+		<link rel ="stylesheet" href="tickTacToe.css" type="text/css">
+</head>
+
+<body>
+
+<h1> Tick Tac Toe </h1>
+<!--<h2> A fun 2 player game! </h2>!-->
+		<div id = 'alertMessage'>
+		<span id='alertText'> </span>
+		</div>
+		<div id ='wrapper'>
+			<br>
+			<div>
+			<button id="0" type="button" class='gameButtons'></button>
+			<button id="1" type="button" class='gameButtons'></button>
+			<button id="2" type="button" class='gameButtons'></button>
+			<button id="3" type="button" class='gameButtons'></button>
+			<button id="4" type="button" class='gameButtons'></button>
+			<button id="5" type="button" class='gameButtons'></button>
+			<button id="6" type="button" class='gameButtons'></button>
+			<button id="7" type="button" class='gameButtons'></button>
+			<button id="8" type="button" class='gameButtons'></button>
+			</div>
+		</div>
+
+		<div id = 'selector'>
+			<button id="buttonX" type="button" class ='starterButtons'>X</button>
+			<button id="buttonO" type="button" class ='starterButtons'>O</button>
+		</div>
+		<br>
+		<br>
+		<button type="button" class ='restartButton'>Restart Game</button>
+		<canvas id="world"></canvas>
+	
+
+	<script>
+	var max = 2;
+	var min = 0;
+
+	var table = new Array();
+
+	var turnBelongsTo = "p1";
+	var player1Symbol = "";
+	var player2Symbol = "";
+	var gameStarted = false;
+	var numberOfClicks = 0;
+	var counter = 0;
+	var winningPlayer = 0;
+
+
+	for(var i = 0; i <= max; i++){
+		table[i] = new Array();
+			for (var j = 0; j <= max; j++) {
+				table[i][j] = 0;
+			}
+	}
+	</script>
+
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+		<script type="text/javascript" src="tickTacToe.js"></script>
+
+</body>
+
+</html>
+
