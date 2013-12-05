@@ -20,20 +20,27 @@ h2 {
 p {
 	font-family: 'Kelly Slab', cursive;	
 	text-align: center;
+	margin-left: 275px;
+	font-size: 20px;
+}
+
+body {
+	width: 100%;
+	height: 100%;
 }
 
 /*-------------------------------------------------------------------------------------------------
 CSS for main box around buttons
 -------------------------------------------------------------------------------------------------*/
 #wrapper {
-	width:300px;
-	height:300px;
+	width:25%;
+	height:25%;
 	float:left;
 	text-align: center;
 	border: 6px solid white;
 	border-radius: 30px;
 	padding:50px;
-	margin-top: 0px;
+	margin-top: auto;
 	margin-bottom: 100px;
 	margin-left:50px;
 	margin-right: 300px;
@@ -76,15 +83,15 @@ CSS for small box around buttons X and O
 -------------------------------------------------------------------------------------------------*/
 
 #selector {
-	width:200px;
-	height:85px;
+	width:20%;
+	height:10%;
 	text-align: center;
 	border: 6px solid white;
 	border-radius: 25px;
 	margin-top: auto;
 	margin-bottom: auto;
 	margin-left:auto;
-	margin-right: 100px;
+	margin-right: auto;
 	padding-top: 20px;
 	background-color: white;
 	display: inline-block;
@@ -107,10 +114,11 @@ CSS to change color of buttons once clicked
 	font-family: 'Kelly Slab', cursive;	
 	z-index: 100;
 	text-align: center;
-	top:100px;
+	top:10px;
 	left:600px;
 	width: 500px;
 	height: 125px;
+	margin-top: 0px;
 }
 
 

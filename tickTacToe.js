@@ -1,6 +1,14 @@
 //Initial directions to the users
 stylishAlertUser("Player 1 select X or O");
 
+//reload the page once the user clicks the restart button
+$('.restartButton').click(function() {
+  location.reload();
+});
+
+/*Adds a class depending if Player 1 or 2(for CSS styling), initializes X or O for playerSymbol,
+keeps track of whose turn it is, if the game has started, and removes the click event handler once
+both players have selected X or O.*/
 $('#buttonX').click(function() {
   counter++;
   if (counter == 1) {
@@ -9,6 +17,7 @@ $('#buttonX').click(function() {
   player1Symbol = "X";
   player2Symbol = "0";
   turnBelongsTo = 'p1';
+  $('#buttonX').unbind("click");
 }else {
   $(this).toggleClass('player2Clicked');
   stylishAlertUser("Player 2 is X.");
@@ -16,6 +25,7 @@ $('#buttonX').click(function() {
   player2Symbol = "X";
   turnBelongsTo = 'p1';
   gameStarted = true;
+  $('#buttonX').unbind("click");
 }
 });
 
@@ -27,6 +37,7 @@ $('#buttonO').click(function() {
   player1Symbol = "0";
   player2Symbol = "X";
   turnBelongsTo = 'p1';
+  $('#buttonO').unbind("click");
 }else {
   $(this).toggleClass('player2Clicked');
   stylishAlertUser("Player 2 is O.");
@@ -34,12 +45,14 @@ $('#buttonO').click(function() {
   player2Symbol = "0";
   gameStarted = true;
   turnBelongsTo = 'p1';
+  $('#buttonO').unbind("click");
 }
 });
 
 
 $('.gameButtons').click(function() {
   
+  //Makes sure Player 1 and 2 select X and O before the game begins
   if(!gameStarted){
     alert("Please select X or 0. ");
     return;
@@ -62,6 +75,7 @@ $('.gameButtons').click(function() {
 
   var spaceAvailable = isSpaceAvailable(result[0],result[1]); //in the button clicked
 
+  //Alerts the user if they have already selected a game button
   if(!spaceAvailable){
     stylishAlertUser("Already Taken!");
     return;
@@ -69,37 +83,37 @@ $('.gameButtons').click(function() {
 
   numberOfClicks++;
 
+  //Monitors whose turn it is and add X or O depending on the player
   if (turnBelongsTo == 'p1') {
     $(this).html(player1Symbol);  
     turnBelongsTo = 'p2';
     table[i][j] = 1;
-    stylishAlertUser("Turn belongs to you p2");
+      if(numberOfClicks < 9){
+        stylishAlertUser("Turn belongs to you p2");
+    }
   }else{
     $(this).html(player2Symbol);  
     turnBelongsTo = 'p1';
     table[i][j] = 2; 
-    stylishAlertUser("Turn belongs to you p1");
+      if(numberOfClicks < 9){
+        stylishAlertUser("Turn belongs to you p1");
+    }
   }
 
+  //check if the user is a winner
   var winner = isWinner();
     
-  
-  if(numberOfClicks == 9 && winningPlayer == undefined) {
+  //calls the isADraw function when there is no winner and the board is full
+  if(numberOfClicks == 9 && winner == undefined) {
     isADraw();
   } 
 
+ //Triggers the isGameOver function when a player wins
  if(winningPlayer == 1 || winningPlayer == 2){
     setTimeout(isGameOver, 3000);
-    confetti();
   } 
 
 });
-
-
-$('.restartButton').click(function() {
-  location.reload();
-});
-
 
 /*-------------------------------------------------------------------------------------------------
 Functions
@@ -179,30 +193,12 @@ function isWinner() {
 
 
 function isGameOver(){
- /* var max = 2;
-  var min = 0;
-  var table = new Array();
-  for(i = 0; i <= max; i++){
-    table[i] = new Array();
-      for (j = 0; j <= max; j++) {
-        table[i][j] = 0;
-      }
-  }
-  counter = 0;
-  gameStarted = false;
-  numberOfClicks = 0;
-  turnBelongsTo = "p1";
-  $('.gameButtons').html('');
-  $('.gameButtons').html('');
-  $('.gameButtons').css({backgroundColor:'#1b4376'});
-  $('.starterButtons').css({backgroundColor:'#1b4376'}); */
-
-
   stylishAlertUser("Click Restart Game to play again!");
+  $('.gameButtons').unbind("click");
 
 } 
 
 function isADraw() {
-  stylishAlertUser("It's a Draw! Play again :) ");
-  isGameOver();
+  stylishAlertUser("It's a Draw! Click restart to play again :) ");
+  $('.gameButtons').unbind("click");
 }
