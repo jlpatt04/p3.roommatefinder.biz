@@ -26,15 +26,14 @@ p {
 
 body {
 	width: 100%;
-	height: 100%;
 }
 
 /*-------------------------------------------------------------------------------------------------
 CSS for main box around buttons
 -------------------------------------------------------------------------------------------------*/
 #wrapper {
-	width:25%;
-	height:25%;
+	width:300px;
+	height:300px;
 	float:left;
 	text-align: center;
 	border: 6px solid white;
@@ -83,8 +82,8 @@ CSS for small box around buttons X and O
 -------------------------------------------------------------------------------------------------*/
 
 #selector {
-	width:20%;
-	height:10%;
+	width:200px;
+	height:85px;
 	text-align: center;
 	border: 6px solid white;
 	border-radius: 25px;
