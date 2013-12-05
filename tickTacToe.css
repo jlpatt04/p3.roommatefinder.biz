@@ -2,7 +2,7 @@
 General
 -------------------------------------------------------------------------------------------------*/
 html {
-	background-color: white;
+	background-color: #50d4d2;
 }
 
 h1 {
@@ -30,7 +30,7 @@ CSS for main box around buttons
 	height:300px;
 	float:left;
 	text-align: center;
-	border: 6px solid green;
+	border: 6px solid white;
 	border-radius: 30px;
 	padding:50px;
 	margin-top: 0px;
@@ -40,7 +40,6 @@ CSS for main box around buttons
 	background-color: white;
 	top: 100px;
 	left: 200px;
-
 }
 
 
@@ -62,29 +61,15 @@ CSS for buttons in both divs(boxes)
 	margin-right:5px;
 	margin-bottom: 20px;
 	padding: 10px;
-	background-color: #1b4376;
+	background-color: #c8031c;
+	
 }
 
 .restartButton {
 	margin-right: 200px;
 	display: inline-block;
 }
-/*button {
-	font-size:20px;
-	font-weight: bold;
-	color:white;
-	text-align:center;
-	width:75px;
-	height:75px;
-	cursor:pointer;
-	border:4px solid;
-	border-radius: 10px;
-	background-color: green;
-	margin-right: 600px;
-	margin-left: 0px;
-	margin-bottom: 20px;
-	display:block;
-} 
+ 
 
 /*-------------------------------------------------------------------------------------------------
 CSS for small box around buttons X and O
@@ -94,7 +79,7 @@ CSS for small box around buttons X and O
 	width:200px;
 	height:85px;
 	text-align: center;
-	border: 6px solid green;
+	border: 6px solid white;
 	border-radius: 25px;
 	margin-top: auto;
 	margin-bottom: auto;
@@ -110,11 +95,11 @@ CSS for small box around buttons X and O
 CSS to change color of buttons once clicked
 -------------------------------------------------------------------------------------------------*/
 .player1Clicked {
-	background-color: red;
+	background-color: #d4d926;
 }
 
 .player2Clicked {
-	background-color: green;
+	background-color: #adadad;
 }
 
 #alertMessage {
