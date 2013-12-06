@@ -100,19 +100,19 @@ $('.gameButtons').click(function() {
     }
   }
 
+  winningPlayer = "noPlayer";
   //check if the user is a winner
-  var winner = isWinner();
+  isWinner();
     
   //calls the isADraw function when there is no winner and the board is full
-  if(numberOfClicks == 9 && winner == undefined) {
+ if(numberOfClicks == 9 &&  winningPlayer == "noPlayer") {
     isADraw();
-  } 
+  }
 
  //Triggers the isGameOver function when a player wins
  if(winningPlayer == 1 || winningPlayer == 2){
     setTimeout(isGameOver, 3000);
-  } 
-
+  }
 });
 
 /*-------------------------------------------------------------------------------------------------
