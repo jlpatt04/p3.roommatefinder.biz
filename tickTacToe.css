@@ -5,13 +5,12 @@ html {
 	background-color: #50d4d2;
 	font-family: 'Kelly Slab', cursive;	
 }
-}
 
 h1 {
-	text-shadow: 5px 5px red;
 	display:block;
-	text-align: right;
+	text-align: center;
 	font-size: 45px;
+	margin-top: 0px;
 }
 
 body {
@@ -83,6 +82,7 @@ CSS for restart button
 	margin-left: 40px;
 	display: inline-block;
 }
+
 .restartButton:hover {
 	background-color:#adadad;
 }

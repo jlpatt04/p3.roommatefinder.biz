@@ -7,7 +7,7 @@
 <body>
 	<h1>Two Player Tic Tac Toe </h1>
 		<div id = 'alertMessage'>
-		<span id='alertText'> </span>
+			<span id='alertText'> </span>
 		</div>
 		<div id ='wrapper'>
 			<br>
@@ -35,26 +35,23 @@
 	
 
 	<script>
-	var max = 2;
-	var min = 0;
+		var turnBelongsTo = "p1";
+		var player1Symbol = "";
+		var player2Symbol = "";
+		var gameStarted = false;
+		var numberOfClicks = 0;
+		var counter = 0;
+		var winningPlayer = "noPlayer";
+		var max = 2;
+		var min = 0;
+		var table = new Array();
 
-	var table = new Array();
-
-	var turnBelongsTo = "p1";
-	var player1Symbol = "";
-	var player2Symbol = "";
-	var gameStarted = false;
-	var numberOfClicks = 0;
-	var counter = 0;
-	var winningPlayer = 0;
-
-
-	for(var i = 0; i <= max; i++){
-		table[i] = new Array();
-			for (var j = 0; j <= max; j++) {
-				table[i][j] = 0;
+		for(var i = 0; i <= max; i++){
+			table[i] = new Array();
+				for (var j = 0; j <= max; j++) {
+					table[i][j] = 0;
 			}
-	}
+		}
 	</script>
 
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -63,6 +60,5 @@
 
 
 </body>
-
 </html>
 
