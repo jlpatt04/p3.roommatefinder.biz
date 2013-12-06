@@ -1,7 +1,7 @@
 //Initial directions to the users
-  setTimeout(function() {
-        stylishAlertUser("Player 1 click X or O to begin.");
-      }, 2000);
+setTimeout(function() {
+      stylishAlertUser("Player 1 click X or O to begin.");
+    }, 2000);
 
 //reload the page once the user clicks the restart button
 $('.restartButton').click(function() {
@@ -114,13 +114,12 @@ $('.gameButtons').click(function() {
     //calls the isADraw function when there is no winner and the board is full
     if(numberOfClicks == 9 &&  winningPlayer == "noPlayer") {
       isADraw();
+      isGameOver();
     }
 
     //Triggers the isGameOver function when a player wins
     if(winningPlayer == 1 || winningPlayer == 2){
-      //setTimeout(function() {
         isGameOver();
-      //}, 3000);
     }
 
 });
@@ -205,8 +204,8 @@ function isWinner() {
 
 function isGameOver(){
   setTimeout(function() {
-      stylishAlertUser("Click restart game to play again!");
-      }, 2000);
+      stylishAlertUser("Click restart to play again!");
+      }, 3000);
     $('.gameButtons').unbind("click");
 } 
 
